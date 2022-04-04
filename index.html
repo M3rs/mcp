@@ -1,0 +1,253 @@
+<html>
+    <body>
+        <style>
+            img {
+                width: 600px;
+                height: 800px;
+            }
+        </style>
+        <div>
+            <div>
+                <img id="secure" />
+                <img id="extraction" />
+            </div>
+            <div>
+                <img id="secure-map" />
+                <img id="extraction-map" />
+            </div>
+        </div>
+        <script>
+            const Data = {
+  "Deployment": [
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/crisis/_a.jpg",
+      "Map": "A",
+      "Name": "Deployment: A",
+      "Threat": "0",
+      "Type": "Deployment"
+    },
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/crisis/_b.jpg",
+      "Map": "B",
+      "Name": "Deployment: B",
+      "Threat": "0",
+      "Type": "Deployment"
+    },
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/crisis/_c.jpg",
+      "Map": "C",
+      "Name": "Deployment: C",
+      "Threat": "0",
+      "Type": "Deployment"
+    },
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/crisis/_d.jpg",
+      "Map": "D",
+      "Name": "Deployment: D",
+      "Threat": "0",
+      "Type": "Deployment"
+    },
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/crisis/_e.jpg",
+      "Map": "E",
+      "Name": "Deployment: E",
+      "Threat": "0",
+      "Type": "Deployment"
+    },
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/crisis/_f.jpg",
+      "Map": "F",
+      "Name": "Deployment: F",
+      "Threat": "0",
+      "Type": "Deployment"
+    }
+  ],
+  "Extraction": [
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/001/3/skrulls_infiltrate.jpg",
+      "Map": "C",
+      "Name": "Skrulls Infiltrate World Leadership",
+      "Threat": "17",
+      "Type": "Extraction"
+    },
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/001/3/spider_infected.jpg",
+      "Map": "F",
+      "Name": "Spider-Infected Invade Manhattan",
+      "Threat": "17",
+      "Type": "Extraction"
+    },
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/001/3/struggle_cube.jpg",
+      "Map": "F",
+      "Name": "Struggle for the Cube Continues",
+      "Threat": "17",
+      "Type": "Extraction"
+    },
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/005/3/alien_ship.jpg",
+      "Map": "C",
+      "Name": "Alien Ship Crashes in Downtown!",
+      "Threat": "20",
+      "Type": "Extraction"
+    },
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/007/3/mystic_wakandan.jpg",
+      "Map": "A",
+      "Name": "Mystic Wakandan Herbs: Fact or Fiction?",
+      "Threat": "15",
+      "Type": "Extraction"
+    },
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/011/3/fear_grips.jpg",
+      "Map": "D",
+      "Name": "Fear Grips World As \"Worthy\" Terrorize Cities",
+      "Threat": "18",
+      "Type": "Extraction"
+    },
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/018/3/panic_grips_city.jpg",
+      "Map": "B",
+      "Name": "Panic Grips City As Evacuation Efforts Continue!",
+      "Threat": "19",
+      "Type": "Extraction"
+    },
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/023/3/montesi_formula.jpg",
+      "Map": "E",
+      "Name": "The Montesi Formula Found",
+      "Threat": "17",
+      "Type": "Extraction"
+    },
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/042/3/mutant_extremists.jpg",
+      "Map": "C",
+      "Name": "Mutant Extremists Target U.S. Senators!",
+      "Threat": "14",
+      "Type": "Extraction"
+    },
+    {
+      "Image": "http://cloud-3.steamusercontent.com/ugc/1794100322296913293/BE441827F1E58F36DC8E048994C0524B62E01479/",
+      "Map": "C",
+      "Name": "Deadly Legacy Virus Cured?",
+      "Threat": "19",
+      "Type": "Extraction"
+    },
+    {
+      "Image": "http://cloud-3.steamusercontent.com/ugc/1794099926073944306/F22B41EE600E888E19694C21CA781D45E8138AD2/",
+      "Map": "E",
+      "Name": "Research Station Attacked!",
+      "Threat": "16",
+      "Type": "Extraction"
+    }
+  ],
+  "Secure": [
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/001/3/deadly_meteors.jpg",
+      "Map": "C",
+      "Name": "Deadly Meteors Mutate Civilians",
+      "Threat": "17",
+      "Type": "Secure"
+    },
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/001/3/infinity_formula.jpg",
+      "Map": "B",
+      "Name": "Infinity Formula Goes Missing!",
+      "Threat": "17",
+      "Type": "Secure"
+    },
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/001/3/riots_spark.jpg",
+      "Map": "D",
+      "Name": "Riots Spark Over Extremis 3.0",
+      "Threat": "17",
+      "Type": "Secure"
+    },
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/004/3/gamma_wave.jpg",
+      "Map": "E",
+      "Name": "Gamma Wave Sweeps Across Midwest",
+      "Threat": "15",
+      "Type": "Secure"
+    },
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/010/3/portals_overrun_city.jpg",
+      "Map": "D",
+      "Name": "Portals Overrun City With Spider-People!",
+      "Threat": "18",
+      "Type": "Secure"
+    },
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/025/3/cosmic_invasion.jpg",
+      "Map": "D",
+      "Name": "Cosmic Invasion! Black Order Descends on Earth",
+      "Threat": "16",
+      "Type": "Secure"
+    },
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/027/3/demons_downtown.jpg",
+      "Map": "E",
+      "Name": "Demons Downtown! Has Our Comeuppance Come Due?",
+      "Threat": "19",
+      "Type": "Secure"
+    },
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/029/3/mayor_fisk.jpg",
+      "Map": "C",
+      "Name": "Mayor Fisk Vows to Find Missing Witnesses",
+      "Threat": "16",
+      "Type": "Secure"
+    },
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/034/3/terrigen_clouds.png",
+      "Map": "C",
+      "Name": "Terrigen Clouds Sweep Over City",
+      "Threat": "20",
+      "Type": "Secure"
+    },
+    {
+      "Image": "https://s3-us-west-2.amazonaws.com/assets.acrossthebifrost.com/041/3/mutant_madman.jpg",
+      "Map": "B",
+      "Name": "Mutant Madman Turns City Center Into Lethal Amusement Park",
+      "Threat": "18",
+      "Type": "Secure"
+    },
+    {
+      "Image": "http://cloud-3.steamusercontent.com/ugc/1794098328937579824/E14D9333093C2F04472053238A587848BA05868D/",
+      "Map": "C",
+      "Name": "SWORD Establishes Base On Moons Blue Area",
+      "Threat": "14",
+      "Type": "Secure"
+    },
+    {
+      "Image": "http://cloud-3.steamusercontent.com/ugc/1862797216021202726/994F3784BF0BA7C764448A097B5F406D2E27B10C/",
+      "Map": "F",
+      "Name": "Super-Powered Scoundrels Form Sinister Syndicate!",
+      "Threat": "20",
+      "Type": "Secure"
+    },
+    {
+      "Image": "https://s3.us-west-2.amazonaws.com/assets.acrossthebifrost.com/064/3/intrusions+open+across+city.png",
+      "Map": "C",
+      "Name": "Intrusions Open Across City as Seals Collapse",
+      "Threat": "19",
+      "Type": "Secure"
+    }
+  ]
+}
+
+
+            const sec = Data.Secure[Math.floor(Math.random() * Data.Secure.length)];
+            const ext = Data.Extraction[Math.floor(Math.random() * Data.Extraction.length)];
+
+            const secmap = Data.Deployment.find(d => d.Map == sec.Map);
+            const extmap = Data.Deployment.find(d => d.Map == ext.Map);
+
+            document.getElementById('secure').setAttribute('src', sec.Image);
+            document.getElementById('extraction').setAttribute('src', ext.Image);
+            document.getElementById('secure-map').setAttribute('src', secmap.Image);
+            document.getElementById('extraction-map').setAttribute('src', extmap.Image);
+
+        </script>
+    </body>
+</html>
